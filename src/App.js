@@ -5,16 +5,18 @@ import Home from "./pages/Home";
 import Series from "./pages/Series";
 import Comics from "./pages/Comics";
 import Error404 from "./pages/Error404";
+import Header from "./components/Header";
 
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
-        <Route path="/" exact component={() => <Home />} />
-        <Route path="/inicio" exact component={() => <Home />} />
-        <Route path="/series" exact component={() => <Series />} />
-        <Route path="/comics" exact component={() => <Comics />} />
-        <Route path="/*" exact component={() => <Error404 />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/inicio" element={<Home />} />
+        <Route path="/series" element={<Series />} />
+        <Route path="/comics" element={<Comics />} />
+        <Route path="/*" element={<Error404 />} />
       </Routes>
     </BrowserRouter>
   );
